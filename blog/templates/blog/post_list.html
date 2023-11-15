@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2>Les Stormtroopers</h2>
+
+    {% for stormtrooper in stormtroopers %}
+        <div class="col">
+            <div class="image_container">
+                <img class="image_stormtrooper" src='{{stormtrooper.photo}}' alt="Pas d'image"/>
+                <a href="{% url 'character_detail' id_character=stormtrooper.id_character %}">CT-{{stormtrooper.id_character}}</a>
+            </div>
+            <p>Classe : {{ stormtrooper.classe }}</p>
+            <p>Grade : {{ stormtrooper.grade }}</p>
+            <p>Précision : {{ stormtrooper.precision }}</p>
+            <p>Etat actuel : {{ stormtrooper.etat }}</p>
+            <p>Lieu actuel : {{ stormtrooper.lieu }}</p>
+        </div>
+    {% endfor %}
+
+<h2 id="a">Les lieux</h2>
+
+{% for equip in equipements %}
+    <div class="col">
+        <p>{{ equip.id_equip }}</p>
+        <p>disponibilité : {{ equip.disponibilite }}</p>
+    <br>
+
+    <img class="image_equipement" src={{equip.photo}} alt="Pas d'image"/>
+
+    <br>
+</div>
+{% endfor %}
+
+{% endblock %}

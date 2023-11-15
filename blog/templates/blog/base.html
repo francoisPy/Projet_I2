@@ -1,0 +1,129 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">  
+
+        <style>
+            body {
+                background: url('https://cdn.wallpaperhub.app/cloudcache/0/2/a/5/5/7/02a5570aacd425126b9a1f514aa29a527163ada1.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            h1 {
+                margin-top: 5px;
+                margin-bottom: 10px;
+                margin-left: 85px;  
+                color: #700000;              
+            }
+
+            p,h2,h3,h5,li {
+                color: white;
+            }
+
+            h3 {
+                margin-bottom: 50px;
+            }
+
+            h2 {
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+
+            #a {
+                margin-top: 55px;
+            }
+
+            b {
+                color: white;
+            }
+
+            .image_stormtrooper {
+                width: 250px;
+                height: auto;
+                display: inline-block;
+            }
+
+            .image_equipement {
+                width: 500px;
+                height: auto;
+            }
+
+            #logo {
+                width: 150px;
+                height: auto;
+                position: fixed;
+                transform: scale(0.70);
+                top: 0;
+                right: 0;
+                transform-origin: top right;
+            }
+
+            .image-container {
+                text-align: center; 
+            }
+
+            a {
+                display: block; 
+                margin-top: 10px; 
+                margin-bottom: 10px;
+            }
+
+            .annonce {
+                margin-left: 60px;
+                margin-right: 60px;
+            }
+
+            h5 {
+                padding-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            #Empire {
+                color: #700000;
+            }            
+
+            #bottom-page {
+                margin-bottom: 30px;
+            }
+
+        </style>
+
+    </head>
+
+        
+    <body>
+
+        <img id="logo" src="https://e0.pxfuel.com/wallpapers/771/394/desktop-wallpaper-edited-another-it-s-the-sith-empire-few-more-on-the-way-starwars.jpg" alt="logo">
+
+        <div class="page-header">
+            <h1><strong>Bienvenue dans le Centre d'entraînement impérial !</strong></h1>
+        </div>
+
+        <div class="annonce">
+            <h5 class="titre5">Directive Opérationnelle Impériale n°1138: Routine Quotidienne des Stormtroopers</h5>
+            <p><em>À l'attention de tous les Stormtroopers Impériaux</em></p>
+            <p>En tant que fières forces de l'Empire, chaque Stormtrooper doit suivre une routine quotidienne bien établie pour maintenir des normes opérationnelles élevées et assurer une efficacité maximale sur le terrain. Voici un guide détaillé des étapes à suivre chaque jour :</p>
+            <ol>
+                <li>Quitter les Dortoirs :<p>À l'aube, tous les Stormtroopers doivent quitter leurs dortoirs de manière ordonnée et rapide.</p></li>
+                <li>Direction Armurerie :<p>Immédiatement après avoir quitté les dortoirs, rapportez-vous à l'Armurerie pour vous équiper. Assurez-vous d'avoir toutes vos armes et votre équipement en parfait état.</p></li>
+                <li>Entraînement au Champ de Tir :<p>Dirigez-vous vers le Champ de Tir pour des exercices d'entraînement réguliers. Cela contribuera à affiner vos compétences au combat et à augmenter votre précision au tir.</p></li>
+                <li>Pause Déjeuner à la Cantina :<p>Après l'entraînement, prenez une pause déjeuner bien méritée à la Cantina. Assurez-vous de maintenir vos niveaux d'énergie pour les missions à venir.</p></li>
+                <li>Patrouille de la Base :<p>Après la pause déjeuner, effectuez une patrouille rigoureuse de la base. Gardez un œil vigilant sur les points stratégiques et assurez-vous de maintenir la sécurité dans tous les secteurs.</p></li>
+                <li>Retour aux Dortoirs :<p>Avant la tombée de la nuit, regagnez les dortoirs pour une nuit de repos bien méritée. Assurez-vous de respecter les horaires de sommeil recommandés pour être en pleine forme pour les missions futures</p></li>
+            </ol>
+            <p>Cette routine est conçue pour maintenir la discipline, l'efficacité opérationnelle et l'excellence au sein de nos troupes. Tout Stormtrooper qui néglige ces étapes importantes risque des sanctions disciplinaires. L'honneur de l'Empire repose sur chacun de vous.</p>
+            <p id="Empire"><strong><em>Pour l'Empire !</em></strong></p>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        <div id="bottom-page"></div>
+    </body>
+
+</html>
