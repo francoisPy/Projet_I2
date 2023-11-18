@@ -62,7 +62,7 @@ def character_detail(request, id_character):
                 messages.add_message(request, messages.WARNING, 'Le Stormtrooper est déjà à cet endroit.')
             else :
                 print('message')
-                messages.add_message(request, messages.ERROR, 'Désolé, vous ne pouvez pas déplacer ce Stormtrooper à cet endroit.')
+                messages.add_message(request, messages.ERROR, "Désolé, vous ne pouvez pas déplacer ce Stormtrooper à cet endroit, ce lieu est déjà occupé ou le Stormtrooper n'est pas en état d'y aller.")
         return redirect('character_detail', id_character=id_character)
     else:
         form = MoveForm()
