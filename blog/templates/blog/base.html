@@ -40,8 +40,8 @@
             }
 
             .image_stormtrooper {
-                width: 250px;
-                height: auto;
+                height: 600px;
+                width: auto;
                 display: inline-block;
             }
 
@@ -70,9 +70,9 @@
                 margin-bottom: 10px;
             }
 
-            .annonce {
+            #annonce {
                 margin-left: 60px;
-                margin-right: 60px;
+                margin-right: 80px;
             }
 
             h5 {
@@ -88,6 +88,25 @@
                 margin-bottom: 30px;
             }
 
+            #toggleButton {
+                margin-left: 55px;
+                margin-top: 20px;
+                margin-bottom: 25px;
+                color: #700000;
+            }
+
+            #container {
+                display: flex;
+                flex-wrap: wrap; 
+                justify-content: space-between;
+            }
+
+            #container .col {
+                flex: 1; 
+                margin: 20px; 
+                text-align: center; 
+            }
+
         </style>
 
     </head>
@@ -101,7 +120,9 @@
             <h1><strong>Bienvenue dans le Centre d'entraînement impérial !</strong></h1>
         </div>
 
-        <div class="annonce">
+        <button id="toggleButton">Afficher les règles</button>
+
+        <div id="annonce" style="display: none;">
             <h5 class="titre5">Directive Opérationnelle Impériale n°1138: Routine Quotidienne des Stormtroopers</h5>
             <p><em>À l'attention de tous les Stormtroopers Impériaux</em></p>
             <p>En tant que fières forces de l'Empire, chaque Stormtrooper doit suivre une routine quotidienne bien établie pour maintenir des normes opérationnelles élevées et assurer une efficacité maximale sur le terrain. Voici un guide détaillé des étapes à suivre chaque jour :</p>
@@ -117,13 +138,29 @@
             <p id="Empire"><strong><em>Pour l'Empire !</em></strong></p>
         </div>
 
-        <div class="content container">
+        <div class="content container" id="container">
             <div class="row">
                 {% block content %}
                 {% endblock %}
             </div>
         </div>
         <div id="bottom-page"></div>
+
+        <script>
+            document.getElementById('toggleButton').addEventListener('click', function() {
+                var annonce = document.getElementById('annonce');
+                var toggleButton = document.getElementById('toggleButton');
+                if (annonce.style.display === 'none') {
+                    annonce.style.display = 'block';
+                    toggleButton.textContent = 'Cacher les règles';
+                } else {
+                    annonce.style.display = 'none';
+                    toggleButton.textContent = 'Afficher les règles';
+                }
+                });
+        </script>
+      
+
     </body>
 
 </html>
